@@ -60,28 +60,28 @@ class AccountController extends Controller
 
     public function register(Request $request)
     {
-        $user = new Users();
-        $user->user_id = self::GenerateUserId();
-        $user->login = $request['login'];
-        $user->password = $request['password'];
-        $user->avatar_url = 'img/default.png';
-        $user->status = '1';
-        $user->save();
-        $this->setCookie($user->user_id);
+        if (!empty($request['login'] && !empty($request['password']))){
+            $user = new Users();
+            $user->user_id = self::GenerateUserId();
+            $user->login = $request['login'];
+            $user->password = $request['password'];
+            $user->avatar_url = 'img/default.png';
+            $user->status = '1';
+            $user->save();
+            $this->setCookie($user->user_id);
+            return redirect()->route('profile')->with(compact('user'));
+        } else {
+            $error = 'Data is incorrect';
+            return view('register', compact('error'));
+        }
 
-//        $messages = Messages::select()->where('from_user', '=', $request['login'])->orWhere('to_user', '=', $request['login']);
-
-        return redirect()->route('profile')->with(compact('user'));
-//        return redirect('/messages', compact('user', 'messages'));
     }
 
     public function login(Request $request)
     {
         $user = AccountController::checkAccount($request['login']);
-//        dd($user);
         if ($user != null){
             if ($user->password == $request['password']){
-//                dd($user->user_id);
                 $this->setCookie($user->user_id);
                 $user = self::checkAuth($user->user_id);
                 return redirect()->route('profile')->with(['user' => $user]);
@@ -91,7 +91,7 @@ class AccountController extends Controller
             }
         } else {
             $error = 'User not found';
-            return redirect()->route('login')->with(compact('error'));
+            return view('login', compact('error'));
         }
     }
 

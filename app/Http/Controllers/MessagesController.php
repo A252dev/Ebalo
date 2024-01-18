@@ -13,10 +13,10 @@ class MessagesController extends Controller
     {
         $token = AccountController::getCookie();
         if (!empty($token)){
-            $user = Users::select()->where('login', '=', $token)->first();
+            $user = Users::select()->where('user_id', '=', $token)->first();
             $messages = Users::select('login', 'avatar_url', 'status', 'user_id')->get()->toArray();
-//            dd($messages);
-            return view('profile.messages', compact('user', 'messages'));
+//            dd($user);
+            return view('profile.messages')->with(compact('user', 'messages'));
         } else {
             return redirect('/login');
         }
@@ -38,6 +38,16 @@ class MessagesController extends Controller
                 $id = Users::select('user_id', 'login', 'avatar_url')->where('user_id', '=', $id)->first();
 //                dd($id);
 //                self::sendGet($id);
+
+//                $titles = array();
+//                foreach ($messages as $current_user){
+//                    $object = Users::select('login')->where('user_id', '=', $current_user->to_user)->orWhere('user_id', '=', $current_user->from_user)->first();
+//                    dd($object);
+//                    array_push($titles, $object);
+//                }
+////                $titles = Users::select('login')->where('user_id', '=', $id_list)->get();
+//                dd($titles);
+
                 return view('profile.write', compact('user', 'id', 'messages'));
             } else {
                 $messages = Messages::select()->where('from_user', '=', $user->login)->orWhere('to_user', '=', $user->login)->get();

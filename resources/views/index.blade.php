@@ -25,7 +25,7 @@
                     </svg>
                 </div>
                 <div class="title__container">
-                    <h4 class="title">WELCOME TO MORDECHKO</h4>
+                    <h4 class="title">WELCOME TO EBALO</h4>
                     <h5 class="subtitle">the best messenger in the whole world</h5>
                 </div>
             </div>
@@ -33,27 +33,27 @@
                 <h3 class="title">NEWS</h3>
                 <div class="list__container">
                     <div class="news__block">
-                        <div class="image"></div>
+                        <div class="image"><img style="width: 358px; height: 256px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngmart.com%2Ffiles%2F22%2FPiplup-Pokemon-PNG-Photo.png&f=1&nofb=1&ipt=2e7a619d7d580e3ec7998afe6e0215489cfa1cb6681eff90d580e0ddd8c0c996&ipo=images"></div>
                         <h5 class="title">OUR PLATFORM IS VERY GOOD</h5>
                     </div>
                     <div class="news__block">
-                        <div class="image"></div>
+                        <div class="image"><img style="width: 358px; height: 256px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngmart.com%2Ffiles%2F22%2FPiplup-Pokemon-PNG-Photo.png&f=1&nofb=1&ipt=2e7a619d7d580e3ec7998afe6e0215489cfa1cb6681eff90d580e0ddd8c0c996&ipo=images"></div>
                         <h5 class="title">OUR PLATFORM IS VERY GOOD</h5>
                     </div>
                     <div class="news__block">
-                        <div class="image"></div>
+                        <div class="image"><img style="width: 358px; height: 256px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngmart.com%2Ffiles%2F22%2FPiplup-Pokemon-PNG-Photo.png&f=1&nofb=1&ipt=2e7a619d7d580e3ec7998afe6e0215489cfa1cb6681eff90d580e0ddd8c0c996&ipo=images"></div>
                         <h5 class="title">OUR PLATFORM IS VERY GOOD</h5>
                     </div>
                     <div class="news__block">
-                        <div class="image"></div>
+                        <div class="image"><img style="width: 358px; height: 256px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngmart.com%2Ffiles%2F22%2FPiplup-Pokemon-PNG-Photo.png&f=1&nofb=1&ipt=2e7a619d7d580e3ec7998afe6e0215489cfa1cb6681eff90d580e0ddd8c0c996&ipo=images"></div>
                         <h5 class="title">OUR PLATFORM IS VERY GOOD</h5>
                     </div>
                     <div class="news__block">
-                        <div class="image"></div>
+                        <div class="image"><img style="width: 358px; height: 256px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngmart.com%2Ffiles%2F22%2FPiplup-Pokemon-PNG-Photo.png&f=1&nofb=1&ipt=2e7a619d7d580e3ec7998afe6e0215489cfa1cb6681eff90d580e0ddd8c0c996&ipo=images"></div>
                         <h5 class="title">OUR PLATFORM IS VERY GOOD</h5>
                     </div>
                     <div class="news__block">
-                        <div class="image"></div>
+                        <div class="image"><img style="width: 358px; height: 256px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngmart.com%2Ffiles%2F22%2FPiplup-Pokemon-PNG-Photo.png&f=1&nofb=1&ipt=2e7a619d7d580e3ec7998afe6e0215489cfa1cb6681eff90d580e0ddd8c0c996&ipo=images"></div>
                         <h5 class="title">OUR PLATFORM IS VERY GOOD</h5>
                     </div>
                 </div>

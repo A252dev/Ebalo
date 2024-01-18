@@ -80,19 +80,21 @@
                 </div>
                 <div class="messages__container">
                     <div class="scroll__content" id="message">
-                        <div class="message__block">
-                            <div class="content__container">
-                                <h4 class="title">Chat</h4>
-                                <h5 class="subtitle">Loading...</h5>
+                        @foreach($messages as $line)
+                            <div class="message__block">
+                                <div class="content__container">
+                                    <h4 class="title">{{ $line->to_user }}</h4>
+                                    <h5 class="subtitle">{{ $line->message }}</h5>
+                                </div>
+                                <div id="read">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16"
+                                         fill="none">
+                                        <path d="M1 8.63636L8 15L19 5" stroke="white" stroke-linecap="round" />
+                                        <path d="M1 4.63636L8 11L19 1" stroke="white" stroke-linecap="round" />
+                                    </svg>
+                                </div>
                             </div>
-                            <div id="read">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16"
-                                     fill="none">
-                                    <path d="M1 8.63636L8 15L19 5" stroke="white" stroke-linecap="round" />
-                                    <path d="M1 4.63636L8 11L19 1" stroke="white" stroke-linecap="round" />
-                                </svg>
-                            </div>
-                        </div>
+                        @endforeach
                         <!-- here messages is load -->
                     </div>
                 </div>
@@ -149,138 +151,143 @@
             {{--var user_id = "{{ $id->user_id }}";--}}
 
 
+
             var user_login = "{{ $user->user_id }}";
             var user_nickname = "{{ $user->login }}";
             var target_user = JSON.parse("{{ json_encode($id->user_id) }}");
             var target_user_nickname = "{{ $id->login }}";
 
-            // var pc_messages = document.getElementById('message');
-            // var mobile_messages = document.getElementsByClassName('mobile__messages');
+            {{--// var pc_messages = document.getElementById('message');--}}
+            {{--// var mobile_messages = document.getElementsByClassName('mobile__messages');--}}
 
             var chat = document.getElementById('message');
-            var chat_mobile = document.getElementById('message__mobile');
+            {{--var chat_mobile = document.getElementById('message__mobile');--}}
 
-            // console.log(user_login);
-            // console.log(target_user);
-
-            setInterval(function (){
-                $.ajax({
-                    url: target_user + `/get`,
-                    data: $('#add_post').serialize(),
-                    type: 'get',
-
-                    success:function(result){
-                        // console.log('get is done');
-                        var line = [];
-                        for (var i = 0; i < result.messages.length; i++){
-                            // line.push("<h4 class='title'>" + result.messages[i]['from_user'] + "</h4>" +
-                            //             "   <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>"
-                            //             );
-                            if (result.messages[i]['from_user'] == user_login){
-                                line.push(
-                                    "<div class='message__block'>" +
-                                    "   <div class='content__container'>" +
-                                    "       <h4 class='title'>" + user_nickname + "</h4>" +
-                                    "       <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>" +
-                                    "  </div>" +
-                                    "   <div id='unread'>" +
-                                    "       <svg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12' fill='none'>" +
-                                    "           <path d='M1 4.63636L8 11L19 1' stroke='white' stroke-linecap='round' />" +
-                                    "       </svg>" +
-                                    "   </div>" +
-                                    "</div>");
-                            } else {
-                                line.push(
-                                    "<div class='message__block'>" +
-                                    "   <div class='content__container'>" +
-                                    // "       <h4 class='title'>" + result.messages[i]['from_user'] + "</h4>" +
-                                    "       <h4 class='title'>" + target_user_nickname + "</h4>" +
-                                    "       <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>" +
-                                    "  </div>" +
-                                    "   <div id='unread'>" +
-                                    "       <svg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12' fill='none'>" +
-                                    "           <path d='M1 4.63636L8 11L19 1' stroke='white' stroke-linecap='round' />" +
-                                    "       </svg>" +
-                                    "   </div>" +
-                                    "</div>");
-                            }
-                            // $("#message").append("<p>Пишет: " + result.messages[i]['from_user'] + " с текстом " + result.messages[i]['message'] + "</p>")
-                            // console.log(result.messages[i]['message']);
-                            // $("#message").html.append(result.messages[i]['message']);
-                        }
-                        // console.log(line);
-
-                        $('#message').html(line);
-                        // $('#message__mobile').html(line);
-
-                        $(chat).scrollTop($(chat)[0].scrollHeight);
-                        // $(chat_mobile).scrollTop($(chat_mobile)[0].scrollHeight);
-                    }
+            {{--// console.log(user_login);--}}
+            {{--// console.log(target_user);--}}
 
 
-                });
+            {{--setInterval(function (){--}}
+            {{--    $.ajax({--}}
+            {{--        url: target_user + `/get`,--}}
+            {{--        data: $('#add_post').serialize(),--}}
+            {{--        type: 'get',--}}
+
+            {{--        success:function(result){--}}
+            {{--            // console.log('get is done');--}}
+            {{--            var line = [];--}}
+            {{--            for (var i = 0; i < result.messages.length; i++){--}}
+            {{--                // line.push("<h4 class='title'>" + result.messages[i]['from_user'] + "</h4>" +--}}
+            {{--                //             "   <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>"--}}
+            {{--                //             );--}}
+            {{--                if (result.messages[i]['from_user'] == user_login){--}}
+            {{--                    line.push(--}}
+            {{--                        "<div class='message__block'>" +--}}
+            {{--                        "   <div class='content__container'>" +--}}
+            {{--                        "       <h4 class='title'>" + user_nickname + "</h4>" +--}}
+            {{--                        "       <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>" +--}}
+            {{--                        "  </div>" +--}}
+            {{--                        "   <div id='unread'>" +--}}
+            {{--                        "       <svg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12' fill='none'>" +--}}
+            {{--                        "           <path d='M1 4.63636L8 11L19 1' stroke='white' stroke-linecap='round' />" +--}}
+            {{--                        "       </svg>" +--}}
+            {{--                        "   </div>" +--}}
+            {{--                        "</div>");--}}
+            {{--                } else {--}}
+            {{--                    line.push(--}}
+            {{--                        "<div class='message__block'>" +--}}
+            {{--                        "   <div class='content__container'>" +--}}
+            {{--                        // "       <h4 class='title'>" + result.messages[i]['from_user'] + "</h4>" +--}}
+            {{--                        "       <h4 class='title'>" + target_user_nickname + "</h4>" +--}}
+            {{--                        "       <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>" +--}}
+            {{--                        "  </div>" +--}}
+            {{--                        "   <div id='unread'>" +--}}
+            {{--                        "       <svg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12' fill='none'>" +--}}
+            {{--                        "           <path d='M1 4.63636L8 11L19 1' stroke='white' stroke-linecap='round' />" +--}}
+            {{--                        "       </svg>" +--}}
+            {{--                        "   </div>" +--}}
+            {{--                        "</div>");--}}
+            {{--                }--}}
+            {{--                // $("#message").append("<p>Пишет: " + result.messages[i]['from_user'] + " с текстом " + result.messages[i]['message'] + "</p>")--}}
+            {{--                // console.log(result.messages[i]['message']);--}}
+            {{--                // $("#message").html.append(result.messages[i]['message']);--}}
+            {{--            }--}}
+            {{--            // console.log(line);--}}
+
+            {{--            $('#message').html(line);--}}
+
+            {{--            // $('#message__mobile').html(line);--}}
+
+            {{--            // $(chat).scrollTop($(chat)[0].scrollHeight);--}}
+
+            {{--            // $(chat_mobile).scrollTop($(chat_mobile)[0].scrollHeight);--}}
+            {{--        }--}}
+
+
+            {{--    });--}}
 
 
 
-                $.ajax({
-                    url: target_user + `/get`,
-                    data: $('#add_post_mobile').serialize(),
-                    type: 'get',
+            {{--    $.ajax({--}}
+            {{--        url: target_user + `/get`,--}}
+            {{--        data: $('#add_post_mobile').serialize(),--}}
+            {{--        type: 'get',--}}
 
-                    success:function(result){
-                        // console.log('get is done');
-                        var line = [];
-                        for (var i = 0; i < result.messages.length; i++){
-                            // line.push("<h4 class='title'>" + result.messages[i]['from_user'] + "</h4>" +
-                            //             "   <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>"
-                            //             );
-                            if (result.messages[i]['from_user'] == user_login){
-                                line.push(
-                                    "<div class='message__block'>" +
-                                    "   <div class='content__container'>" +
-                                    "       <h4 class='title'>" + user_nickname + "</h4>" +
-                                    "       <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>" +
-                                    "  </div>" +
-                                    "   <div id='unread'>" +
-                                    "       <svg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12' fill='none'>" +
-                                    "           <path d='M1 4.63636L8 11L19 1' stroke='white' stroke-linecap='round' />" +
-                                    "       </svg>" +
-                                    "   </div>" +
-                                    "</div>");
-                            } else {
-                                line.push(
-                                    "<div class='message__block'>" +
-                                    "   <div class='content__container'>" +
-                                    // "       <h4 class='title'>" + result.messages[i]['from_user'] + "</h4>" +
-                                    "       <h4 class='title'>" + target_user_nickname + "</h4>" +
-                                    "       <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>" +
-                                    "  </div>" +
-                                    "   <div id='unread'>" +
-                                    "       <svg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12' fill='none'>" +
-                                    "           <path d='M1 4.63636L8 11L19 1' stroke='white' stroke-linecap='round' />" +
-                                    "       </svg>" +
-                                    "   </div>" +
-                                    "</div>");
-                            }
-                            // $("#message").append("<p>Пишет: " + result.messages[i]['from_user'] + " с текстом " + result.messages[i]['message'] + "</p>")
-                            // console.log(result.messages[i]['message']);
-                            // $("#message").html.append(result.messages[i]['message']);
-                        }
-                        // console.log(line);
+            {{--        success:function(result){--}}
+            {{--            // console.log('get is done');--}}
+            {{--            var line = [];--}}
+            {{--            for (var i = 0; i < result.messages.length; i++){--}}
+            {{--                // line.push("<h4 class='title'>" + result.messages[i]['from_user'] + "</h4>" +--}}
+            {{--                //             "   <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>"--}}
+            {{--                //             );--}}
+            {{--                if (result.messages[i]['from_user'] == user_login){--}}
+            {{--                    line.push(--}}
+            {{--                        "<div class='message__block'>" +--}}
+            {{--                        "   <div class='content__container'>" +--}}
+            {{--                        "       <h4 class='title'>" + user_nickname + "</h4>" +--}}
+            {{--                        "       <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>" +--}}
+            {{--                        "  </div>" +--}}
+            {{--                        "   <div id='unread'>" +--}}
+            {{--                        "       <svg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12' fill='none'>" +--}}
+            {{--                        "           <path d='M1 4.63636L8 11L19 1' stroke='white' stroke-linecap='round' />" +--}}
+            {{--                        "       </svg>" +--}}
+            {{--                        "   </div>" +--}}
+            {{--                        "</div>");--}}
+            {{--                } else {--}}
+            {{--                    line.push(--}}
+            {{--                        "<div class='message__block'>" +--}}
+            {{--                        "   <div class='content__container'>" +--}}
+            {{--                        // "       <h4 class='title'>" + result.messages[i]['from_user'] + "</h4>" +--}}
+            {{--                        "       <h4 class='title'>" + target_user_nickname + "</h4>" +--}}
+            {{--                        "       <h5 class='subtitle'>" + result.messages[i]['message'] + "</h5>" +--}}
+            {{--                        "  </div>" +--}}
+            {{--                        "   <div id='unread'>" +--}}
+            {{--                        "       <svg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12' fill='none'>" +--}}
+            {{--                        "           <path d='M1 4.63636L8 11L19 1' stroke='white' stroke-linecap='round' />" +--}}
+            {{--                        "       </svg>" +--}}
+            {{--                        "   </div>" +--}}
+            {{--                        "</div>");--}}
+            {{--                }--}}
+            {{--                // $("#message").append("<p>Пишет: " + result.messages[i]['from_user'] + " с текстом " + result.messages[i]['message'] + "</p>")--}}
+            {{--                // console.log(result.messages[i]['message']);--}}
+            {{--                // $("#message").html.append(result.messages[i]['message']);--}}
+            {{--            }--}}
+            {{--            // console.log(line);--}}
 
-                        // $('#message').html(line);
-                        $('#message__mobile').html(line);
+            {{--            // $('#message').html(line);--}}
+            {{--            $('#message__mobile').html(line);--}}
 
-                        // $(chat).scrollTop($(chat)[0].scrollHeight);
-                        $(chat_mobile).scrollTop($(chat_mobile)[0].scrollHeight);
-                    }
-
-
-                });
+            {{--            // $(chat).scrollTop($(chat)[0].scrollHeight);--}}
+            {{--            $(chat_mobile).scrollTop($(chat_mobile)[0].scrollHeight);--}}
+            {{--        }--}}
 
 
-            }, 1000);
+            {{--    });--}}
 
+
+            {{--}, 1000);--}}
+
+            $(chat).scrollTop($(chat)[0].scrollHeight);
             // $("#add_post")[0].reset();
 
 

@@ -86,6 +86,12 @@ main {
                 letter-spacing: 0.24px;
                 padding: 5px 68px;
                 border: none;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .bg{
+                background: #d56161;
             }
         }
     }
@@ -180,6 +186,7 @@ main {
                     letter-spacing: 0.24px;
                     padding: 5px 68px;
                     border: none;
+                    text-decoration: none;
                 }
             }
         }
