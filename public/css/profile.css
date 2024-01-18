@@ -1,0 +1,319 @@
+main {
+    .main {
+        width: 100%;
+        max-width: 80%;
+        border-radius: 5px;
+        background: #11151F;
+        height: 500px;
+        padding: 54px 0px;
+
+        .user__container {
+            /* border: 1px solid red; */
+            width: 100%;
+            max-width: 75%;
+            margin: 0 auto;
+            display: flex;
+            /* height: 200px; */
+
+            .avatar__container {
+                /* border: 4px solid green; */
+                display: inherit;
+                flex-direction: column;
+                align-items: center;
+                margin-right: 24px;
+
+                .edit__button {
+                    margin-top: 15px;
+                    color: #FFF;
+                    font-family: 'Bebas Neue Pro';
+                    font-size: 14px;
+                    font-weight: 400;
+                    letter-spacing: 0.28px;
+                    border-radius: 5px;
+                    background: #2A2B2D;
+                    padding: 9px 24px;
+                    text-align: center;
+                    text-decoration: none;
+                    width: 70%;
+                }
+            }
+
+            .manage__container {
+                /* border: 1px solid yellow; */
+                width: 100%;
+                text-align: center;
+
+                .title__container {
+                    display: flex;
+                    justify-content: space-between;
+                    /* display: inline-block; */
+
+
+                    .user__info {
+                        border-radius: 5px;
+                        background: #2A2B2D;
+                        width: 40%;
+                        display: inherit;
+                        justify-content: inherit;
+                        padding: 0px 19px;
+                        align-items: center;
+
+                        .title {
+                            color: #FFF;
+                            font-family: 'Bebas Neue Pro';
+                            font-size: 24px;
+                            font-weight: 400;
+                            letter-spacing: 0.48px;
+                            margin: 14px 0px;
+                        }
+
+                        .manage__button {
+                            display: flex;
+                        }
+                    }
+                }
+
+                .settings__container {
+                    margin-top: 14px;
+                    border-radius: 5px;
+                    background: #2A2B2D;
+                    /* height: 100px; */
+                    padding: 13px 19px;
+                    margin-bottom: 11px;
+
+                    .input__container {
+                        /* border: 1px solid green; */
+                        display: inline-block;
+                        margin: 0px 2px;
+                        text-align: left;
+
+                        .title {
+                            color: #FFF;
+                            font-family: 'Bebas Neue Pro';
+                            font-size: 16px;
+                            font-weight: 350;
+                            letter-spacing: 0.32px;
+                            margin-bottom: 4px;
+                        }
+
+                        .profile__input {
+                            width: 240px;
+                            color: #FFF;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 12px;
+                            font-weight: 300;
+                            letter-spacing: 0.24px;
+                            padding: 12px 10px;
+                            border-radius: 5px;
+                            background: #303C54;
+                            border: none;
+                            margin-bottom: 8px;
+                        }
+
+                        .profile__input:focus {
+                            outline: 0;
+                            color: #FFF;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 12px;
+                            font-weight: 300;
+                            letter-spacing: 0.24px;
+                            padding: 12px 10px;
+                            border-radius: 5px;
+                            background: #303C54;
+                            border: none;
+                        }
+                    }
+                }
+
+                .save__button {
+                    color: #FFF;
+                    font-family: 'Bebas Neue Pro';
+                    font-size: 12px;
+                    font-weight: 350;
+                    letter-spacing: 0.24px;
+                    border-radius: 5px;
+                    background: #2A2B2D;
+                    padding: 6px 68px;
+                    display: flex;
+                    width: 1%;
+                    justify-content: center;
+                    margin: 0 auto;
+                    text-decoration: none;
+                    border: none;
+                }
+
+                .mobile{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1200px){
+    main {
+        /*border: 3px solid red;*/
+        height: 900px;
+
+        .main {
+            width: 100%;
+            /*max-width: 70%;*/
+            border-radius: 5px;
+            /*background: #11151F;*/
+            background: none;
+            /*height: 500px;*/
+            /*padding: 54px 0px;*/
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+
+            .user__container {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                /* height: 200px; */
+
+                .avatar__container {
+                    /* border: 4px solid green; */
+                    display: inherit;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 24px;
+
+                    .edit__button {
+                        margin-top: 15px;
+                        color: #FFF;
+                        font-family: 'Bebas Neue Pro';
+                        font-size: 14px;
+                        font-weight: 400;
+                        letter-spacing: 0.28px;
+                        border-radius: 5px;
+                        background: #2A2B2D;
+                        padding: 9px 24px;
+                        text-align: center;
+                        text-decoration: none;
+                        width: 70%;
+                    }
+                }
+
+                .manage__container {
+                    /*border: 2px solid yellow;*/
+                    width: 100%;
+                    text-align: center;
+                    height: 100%;
+
+                    .title__container {
+                        display: flex;
+                        justify-content: space-between;
+                        /* display: inline-block; */
+
+
+                        .user__info {
+                            border-radius: 5px;
+                            background: #2A2B2D;
+                            width: 40%;
+                            display: inherit;
+                            justify-content: inherit;
+                            padding: 0px 19px;
+                            align-items: center;
+
+                            .title {
+                                color: #FFF;
+                                font-family: 'Bebas Neue Pro';
+                                font-size: 24px;
+                                font-weight: 400;
+                                letter-spacing: 0.48px;
+                                margin: 14px 0px;
+                            }
+
+                            .manage__button {
+                                display: flex;
+                            }
+                        }
+                    }
+
+                    .settings__container {
+                        margin-top: 14px;
+                        border-radius: 5px;
+                        background: #2A2B2D;
+                        /* height: 100px; */
+                        padding: 13px 19px;
+                        margin-bottom: 11px;
+
+                        .input__container {
+                            /* border: 1px solid green; */
+                            display: inline-block;
+                            margin: 0px 2px;
+                            text-align: left;
+
+                            .title {
+                                color: #FFF;
+                                font-family: 'Bebas Neue Pro';
+                                font-size: 16px;
+                                font-weight: 350;
+                                letter-spacing: 0.32px;
+                                margin-bottom: 4px;
+                            }
+
+                            .profile__input {
+                                width: 240px;
+                                color: #FFF;
+                                font-family: 'Montserrat', sans-serif;
+                                font-size: 12px;
+                                font-weight: 300;
+                                letter-spacing: 0.24px;
+                                padding: 12px 10px;
+                                border-radius: 5px;
+                                background: #303C54;
+                                border: none;
+                                margin-bottom: 8px;
+                            }
+
+                            .profile__input:focus {
+                                outline: 0;
+                                color: #FFF;
+                                font-family: 'Montserrat', sans-serif;
+                                font-size: 12px;
+                                font-weight: 300;
+                                letter-spacing: 0.24px;
+                                padding: 12px 10px;
+                                border-radius: 5px;
+                                background: #303C54;
+                                border: none;
+                            }
+                        }
+                    }
+
+                    .save__button {
+                        color: #FFF;
+                        font-family: 'Bebas Neue Pro';
+                        font-size: 22px;
+                        font-weight: 350;
+                        letter-spacing: 0.24px;
+                        border-radius: 5px;
+                        background: #2A2B2D;
+                        padding: 6px 68px;
+                        display: flex;
+                        width: 1%;
+                        justify-content: center;
+                        margin: 0 auto;
+                        text-decoration: none;
+                        border: none;
+                    }
+
+                    .mobile{
+                        font-size: 19px;
+                        border-radius: 5px;
+                        background: #000;
+                        box-shadow: 0px 2px 7.6px 0px rgba(0, 0, 0, 0.25);
+                        margin-top: 8px;
+                        display: flex;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
