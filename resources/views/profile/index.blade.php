@@ -80,6 +80,7 @@
                         <a class="save__button mobile" href="{{ url('/logout')  }}">Logout</a>
                     </form>
                 </div>
+            </div>
         </section>
     </main>
 @endsection
