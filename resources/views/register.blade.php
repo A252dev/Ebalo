@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ asset('css/log_reg.css') }}">
 @endsection
 
-@section('title') Mordechko - register page @endsection
+@section('title') Ebalo - register page @endsection
 
 @section('main_content')
     <main>

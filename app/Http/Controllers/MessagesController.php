@@ -69,6 +69,7 @@ class MessagesController extends Controller
             $msg->to_user = $request['to_user'];
             $msg->message = $request['message'];
 //        $msg->save();
+
             $messages = Messages::select()->where('from_user', '=', $user->user_id)->where('to_user', '=', $request->route('id'))->
             orWhere('to_user', '=', $user->user_id)->where('from_user', '=', $request->route('id'))->get();
 

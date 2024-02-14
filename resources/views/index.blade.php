@@ -2,7 +2,7 @@
 
     @section('style') <link rel="stylesheet" href="{{ asset('css/index.css') }}"> @endsection
 
-@section('title') Mordechko - main page @endsection
+@section('title') Ebalo - main page @endsection
 
 @section('main_content')
     <main>

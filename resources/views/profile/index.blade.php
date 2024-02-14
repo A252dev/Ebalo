@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
 @endsection
 
-@section('title') Mordechko - profile page @endsection
+@section('title') Ebalo - profile page @endsection
 
 @section('main_content')
     <main>

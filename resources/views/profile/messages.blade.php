@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ asset('css/messages.css') }}">
 @endsection
 
-@section('title') Mordechko - messages page @endsection
+@section('title') Ebalo - messages page @endsection
 
 @section('main_content')
     <main>
