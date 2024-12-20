@@ -4,4 +4,4 @@
 
 ## About Ebalo
 
-You only need this fucking messenger for what it just is. This shit has no purpose or goal, it's only done because its author wanted it that way. If he stops wanting it, this useless fucking thing will just go away, or hang up as it usually does. It's developed in PHP, the database is in MySQL, because the author wanted it that way. If you somehow download and install this fucking thing, you can message each other (through the same server, of course), send links, and tell each other to fuck off. Use it, have a good appetite ;)
+You only need this messenger for what it just is. This shit has no purpose or goal, it's only done because its author wanted it that way. If he stops wanting it, this useless thing will just go away, or hang up as it usually does. It's developed in PHP, the database is in MySQL, because the author wanted it that way. If you somehow download and install this thing, you can message each other (through the same server, of course), send links, and tell each other to fuck off. Use it, have a good appetite ;)
